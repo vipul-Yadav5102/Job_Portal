@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import Hero from "../components/Hero";
+import TopNiches from "../components/TopNiches";
+import HowItWorks from "../components/HowItWorks";
 
 const Home = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <Hero />
+      <TopNiches />
+      <HowItWorks />
+    </>
+  );
+};
 
-export default Home
+export default Home;

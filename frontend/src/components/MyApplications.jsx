@@ -9,7 +9,7 @@ import {
   deleteApplication,
   fetchJobSeekerApplications,
 } from "../store/slices/applicationSlice";
-import Spinner from "../components/Spinner";
+import Spinner from "./Spinner";
 
 const MyApplications = () => {
   const { user, isAuthenticated } = useSelector((state) => state.user);
