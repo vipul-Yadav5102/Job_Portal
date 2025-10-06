@@ -10,6 +10,8 @@ import jobRouter from "./routes/jobRouter.js";
 import applicationRouter from "./routes/applicationRouter.js";
  import { newsLetterCron } from "./automation/newsLetterCron.js";
 
+ 
+
 
 const app= express();
 

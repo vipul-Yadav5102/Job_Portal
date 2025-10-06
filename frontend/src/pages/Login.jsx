@@ -8,6 +8,7 @@ import { FaRegUser } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
 
+
 const Login = () => {
   const [role, setRole] = useState("");
   const [email, setEmail] = useState("");
@@ -85,7 +86,15 @@ const Login = () => {
             <button type="submit" disabled={loading}>
               Login
             </button>
+        
             <Link to={"/register"}>Register Now</Link>
+               
+                 <button 
+            
+                className='w-full item-center flex-col m-5px' variant='outline'>
+                  <img onClick={()=>window.open("http://localhost:4000/auth/google", "_self")}  src="/google_black_logo_icon_147125.svg" width={40} height={40} alt="" />
+                  Login with google</button>
+               
           </form>
         </div>
       </section>

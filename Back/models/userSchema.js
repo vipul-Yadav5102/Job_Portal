@@ -6,10 +6,11 @@ import validator from "validator";
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    
     minLength: [3, "Name must cotain at least 3 characters."],
     maxLength: [30, "Name cannot exceed 30 characters."],
   },
+
   email: {
     type: String,
     required: true,
@@ -30,7 +31,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
+
     minLength: [8, "Password must cantain at least 8 chatacters."],
     maxLength: [32, "Password cannot exceed 32 characters."],
     select: false
