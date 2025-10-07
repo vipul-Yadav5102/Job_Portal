@@ -4,7 +4,7 @@ import "./App.css";
  import Navbar from "./components/Navbar";
  import Footer from "./components/Footer";
  import Home from "./pages/Home";
- import Dashboard from "./pages/Dashboard";
+ //import Dashboard from "./pages/Dashboard";
  import Jobs from "./pages/Jobs";
   import Login from "./pages/Login";
   import NotFound from "./pages/NotFound";
@@ -29,7 +29,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/jobs" element={<Jobs />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route
             path="/post/application/:jobId"
             element={<PostApplication />}
