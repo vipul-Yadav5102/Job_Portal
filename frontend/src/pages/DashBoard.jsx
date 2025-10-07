@@ -171,7 +171,7 @@ const Dashboard = () => {
                   break;
 
                 default:
-                  <MyProfile />;
+                      return <MyProfile />;
                   break;
               }
             })()}
