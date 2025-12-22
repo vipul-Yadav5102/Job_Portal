@@ -9,7 +9,7 @@ const Navbar = () => {
     <>
       <nav className={show ? "navbar show_navbar" : "navbar"}>
         <div className="logo">
-          <img src="/logo.jpg" alt="logo" />
+          <img src="Job_niche.jpg" alt="logo" />
         </div>
         <div className="links">
           <ul>

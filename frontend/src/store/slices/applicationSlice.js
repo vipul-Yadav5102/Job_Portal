@@ -84,7 +84,7 @@ export const fetchEmployerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForAllApplications());
   try {
     const response = await axios.get(
-      `http://localhost:4000/api/v1/application/employer/getall`||"http://localhost:4000/api/v1/application/employer/getall",
+      `http://localhost:4000/api/v1/application/employer/getall`,
       {
         withCredentials: true,
       }
@@ -98,7 +98,7 @@ export const fetchEmployerApplications = () => async (dispatch) => {
   } catch (error) {
     dispatch(
       applicationSlice.actions.failureForAllApplications(
-        error.response.data.message
+        error.response?.data?.message || error.message || "Something went wrong"
       )
     );
   }
@@ -108,7 +108,7 @@ export const fetchJobSeekerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForMyApplications());
   try {
     const response = await axios.get(
-      `https://job-portal1-wva2.onrender.com/api/v1/application/jobseeker/getall` ||"http://localhost:4000/api/v1/application/jobseeker/getall",
+        `http://localhost:4000/api/v1/application/jobseeker/getall`,
       {
         withCredentials: true,
       }
@@ -122,7 +122,7 @@ export const fetchJobSeekerApplications = () => async (dispatch) => {
   } catch (error) {
     dispatch(
       applicationSlice.actions.failureForMyApplications(
-        error.response.data.message
+        error.response?.data?.message || error.message || "Something went wrong"
       )
     );
   }
@@ -132,7 +132,7 @@ export const postApplication = (data, jobId) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForPostApplication());
   try {
     const response = await axios.post(
-      `https://job-portal1-wva2.onrender.com/api/v1/application/post/${jobId}` ||"http:localhost:4000/api/v1/application/post/${jobId}",
+        `http://localhost:4000/api/v1/application/post/${jobId}`,
       data,
       {
         withCredentials: true,
@@ -146,7 +146,7 @@ export const postApplication = (data, jobId) => async (dispatch) => {
   } catch (error) {
     dispatch(
       applicationSlice.actions.failureForPostApplication(
-        error.response.data.message
+        error.response?.data?.message || error.message || "Something went wrong"
       )
     );
   }
@@ -156,7 +156,7 @@ export const deleteApplication = (id) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForDeleteApplication());
   try {
     const response = await axios.delete(
-      `https://job-portal1-wva2.onrender.com/api/v1/application/delete/${id}` || "http:localhost:4000/api/v1/application/delete/${id}",
+        `http://localhost:4000/api/v1/application/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(
@@ -168,7 +168,7 @@ export const deleteApplication = (id) => async (dispatch) => {
   } catch (error) {
     dispatch(
       applicationSlice.actions.failureForDeleteApplication(
-        error.response.data.message
+        error.response?.data?.message || error.message || "Something went wrong"
       )
     );
   }
