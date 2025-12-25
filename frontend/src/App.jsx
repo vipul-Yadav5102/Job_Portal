@@ -16,7 +16,7 @@ import { useDispatch } from "react-redux";
 import { getUser } from "./store/slices/userSlice";
 
 const App = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();    
 
   useEffect(() => {
     dispatch(getUser());

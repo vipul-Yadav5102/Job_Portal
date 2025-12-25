@@ -80,11 +80,12 @@ const applicationSlice = createSlice({
   },
 });
 
+
 export const fetchEmployerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForAllApplications());
   try {
     const response = await axios.get(
-      `http://localhost:4000/api/v1/application/employer/getall`,
+      `https://job-portal-02yr.onrender.com/api/v1/application/employer/getall`,
       {
         withCredentials: true,
       }
@@ -108,7 +109,7 @@ export const fetchJobSeekerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForMyApplications());
   try {
     const response = await axios.get(
-        `http://localhost:4000/api/v1/application/jobseeker/getall`,
+        `https://job-portal-02yr.onrender.com/api/v1/application/jobseeker/getall`,
       {
         withCredentials: true,
       }
@@ -132,7 +133,7 @@ export const postApplication = (data, jobId) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForPostApplication());
   try {
     const response = await axios.post(
-        `http://localhost:4000/api/v1/application/post/${jobId}`,
+        `https://job-portal-02yr.onrender.com/api/v1/application/post/${jobId}`,
       data,
       {
         withCredentials: true,
@@ -156,7 +157,7 @@ export const deleteApplication = (id) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForDeleteApplication());
   try {
     const response = await axios.delete(
-        `http://localhost:4000/api/v1/application/delete/${id}`,
+        `https://job-portal-02yr.onrender.com/api/v1/application/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(
